@@ -23,6 +23,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     SignInFormEvent event,
   ) async* {
     yield* event.map(
+      initial: (e) async* {
+        yield SignInFormState.initial();
+      },
       emailAddressChanged: (e) async* {
         yield state.copyWith(
           emailAddress: EmailAddress(e.emailAddress),

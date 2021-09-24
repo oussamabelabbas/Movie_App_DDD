@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AppUserTearOff {
   const _$AppUserTearOff();
 
-  _AppUser call({required String id}) {
+  _AppUser call({required UniqueId id}) {
     return _AppUser(
       id: id,
     );
@@ -29,7 +29,7 @@ const $AppUser = _$AppUserTearOff();
 
 /// @nodoc
 mixin _$AppUser {
-  String get id => throw _privateConstructorUsedError;
+  UniqueId get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppUserCopyWith<AppUser> get copyWith => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$AppUser {
 abstract class $AppUserCopyWith<$Res> {
   factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
       _$AppUserCopyWithImpl<$Res>;
-  $Res call({String id});
+  $Res call({UniqueId id});
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as UniqueId,
     ));
   }
 }
@@ -68,7 +68,7 @@ abstract class _$AppUserCopyWith<$Res> implements $AppUserCopyWith<$Res> {
   factory _$AppUserCopyWith(_AppUser value, $Res Function(_AppUser) then) =
       __$AppUserCopyWithImpl<$Res>;
   @override
-  $Res call({String id});
+  $Res call({UniqueId id});
 }
 
 /// @nodoc
@@ -88,7 +88,7 @@ class __$AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as UniqueId,
     ));
   }
 }
@@ -99,7 +99,7 @@ class _$_AppUser implements _AppUser {
   const _$_AppUser({required this.id});
 
   @override
-  final String id;
+  final UniqueId id;
 
   @override
   String toString() {
@@ -125,10 +125,10 @@ class _$_AppUser implements _AppUser {
 }
 
 abstract class _AppUser implements AppUser {
-  const factory _AppUser({required String id}) = _$_AppUser;
+  const factory _AppUser({required UniqueId id}) = _$_AppUser;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AppUserCopyWith<_AppUser> get copyWith =>

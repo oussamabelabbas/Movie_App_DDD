@@ -13,3 +13,7 @@ class UnexpectedValueError extends Error {
         "$whatHappened\nFailure caused by the value: $valueFailure");
   }
 }
+
+class TmdbServerError extends Error {}
+
+class NotAuthenticatedError extends Error {}

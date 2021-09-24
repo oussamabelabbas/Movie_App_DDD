@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:movie_app/domain/auth/app_user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:movie_app/domain/auth/auth_failure.dart';
 import 'package:movie_app/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
-  Future<Option<AppUser>> getSignedInUser();
+  Future<Option<User>> getSignedInUser();
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
     required EmailAddress emailAddress,
     required Password password,

@@ -4,8 +4,10 @@ import 'package:movie_app/domain/core/value_failures.dart';
 Either<ValueFailure<String>, String> validateUsername(String username) {
   const usernameRegex = r"^[a-zA-Z]+(?:\s[a-zA-Z]+)+$";
 
-  if (RegExp(usernameRegex).hasMatch(username)) return right(username);
-  return left(ValueFailure.invalidEmail(failedValue: username));
+  if (username.length > 4 && RegExp(usernameRegex).hasMatch(username)) {
+    return right(username);
+  }
+  return left(ValueFailure.invalidUsername(failedValue: username));
 }
 
 Either<ValueFailure<String>, String> validateEmailAddress(String emailAddress) {

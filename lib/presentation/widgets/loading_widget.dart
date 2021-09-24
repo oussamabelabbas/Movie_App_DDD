@@ -7,14 +7,14 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48.0,
-      width: 48.0,
+      height: 128.0,
+      width: 128.0,
       child: SpinKitChasingDots(
-        size: 32.0,
+        size: 64.0,
         itemBuilder: (BuildContext context, int index) {
           return DecoratedBox(
             decoration: BoxDecoration(
-              color: index.isEven ? Colors.red : Colors.yellow,
+              color: index.isEven ? Colors.grey : Colors.black,
             ),
           );
         },

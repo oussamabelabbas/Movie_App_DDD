@@ -8,6 +8,6 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
       InvalidEmail<T>;
   const factory ValueFailure.shortPassword({required T failedValue}) =
       ShortPassword<T>;
-  const factory ValueFailure.shortUsername({required T failedValue}) =
-      ShortUsername;
+  const factory ValueFailure.invalidUsername({required T failedValue}) =
+      InvalidUsername<T>;
 }

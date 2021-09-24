@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:movie_app/domain/auth/auth_failure.dart';
 import 'package:movie_app/domain/auth/i_auth_facade.dart';
 import 'package:movie_app/domain/auth/value_objects.dart';
@@ -12,6 +13,7 @@ part 'sign_up_form_event.dart';
 part 'sign_up_form_state.dart';
 part 'sign_up_form_bloc.freezed.dart';
 
+@injectable
 class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   final IAuthFacade _authFacade;
   SignUpFormBloc(this._authFacade) : super(SignUpFormState.initial());
@@ -21,6 +23,9 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
     SignUpFormEvent event,
   ) async* {
     yield* event.map(
+      initial: (e) async* {
+        yield SignUpFormState.initial();
+      },
       usernameChanged: (e) async* {
         yield state.copyWith(
           username: Username(e.username),
