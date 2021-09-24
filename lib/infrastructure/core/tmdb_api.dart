@@ -6,8 +6,10 @@ import 'package:http/http.dart' as HTTP;
 
 @lazySingleton
 class TmdbApi {
-  static const String _apiKey = <<API_KEY>>;
- 
+  static const String _apiKey = "3fcc3cf0902881ec381782b11cebbe92";
+  static const String _apiReadAccessToken =
+      "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZmNjM2NmMDkwMjg4MWVjMzgxNzgyYjExY2ViYmU5MiIsInN1YiI6IjVmODg5ZGRjZTMzZjgzMDAzN2ZkZjk1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tLu7CRm0t78C9_NtDb4_1KC8TC3sh6nqUGXdXq2BN44";
+
   List<Map<String, dynamic>>? genresResponseCache;
   DateTime? genresResponseCacheDate;
   List<Map<String, dynamic>>? discoverResponseCache;
